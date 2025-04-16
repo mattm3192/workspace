@@ -2,16 +2,18 @@ from graphics import *
 
 def main():
 	win = Window(800, 600)
-	p1 = Point(10, 30)
-	p2 = Point(140, 150)
-	p3 = Point(400, 300)
-	p4 = Point(240,150)
-	l1 = Line(p1, p2)
-	l1.draw(win.canvas)
-	l2 = Line(p3, p4)
-	l2.draw(win.canvas, "red")
-	l3 = Line(p1, p3)
-	l3.draw(win.canvas, "blue")
+	cell1 = Cell(win)
+	#cell1.has_right_wall = False
+	cell2 = Cell(win)
+	#cell2.has_left_wall = False
+	#cell2.has_bottom_wall = False
+	cell3 = Cell(win)
+	#cell3.has_top_wall = False
+	#cell3.has_right_wall = False
+
+	cell1.draw(1, 1, 100, 100)
+	cell2.draw(50, 1, 50, 100)
+	cell3.draw(100, 100, 200, 200)
 
 	win.wait_for_close()
 
