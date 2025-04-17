@@ -32,3 +32,12 @@ class Cell():
 			line =Line(Point(x1, y1), Point(x2, y1))
 			self._window.draw_line(line)
 	
+	def draw_move(self, to_cell, undo=False):
+		start_pt = Point((self.x1 + self.x2)/2, (self.y1 + self.y2)/2)
+		end_pt = Point((to_cell.x1 + to_cell.x2)/2, (to_cell.y1 + to_cell.y2)/2)
+		if undo:
+			fill_color = "grey"
+		else:
+			fill_color = "red"
+		line = Line(start_pt, end_pt)
+		self._window.draw_line(line, fill_color)
